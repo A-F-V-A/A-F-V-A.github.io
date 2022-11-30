@@ -1,0 +1,378 @@
+    /* Estilos de Av Abogados
+ * Autor: AFVA 
+*/
+
+/* Estilos generales*/
+
+html { 
+    width: 100vw;
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #f8f9fa;
+}
+
+body::-webkit-scrollbar {
+    height: 15px;
+    width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color: #999;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+a:hover{
+    color: currentColor;
+}
+
+header{
+    width: 100vw;
+}
+
+/* Estilos de la vista */
+/* Nav y header*/
+header.header{
+    /* background-image:url(../img/header.jpg); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+/* header.header::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+} */
+
+header.header .container-fluid{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 25%);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media(max-width:992px){
+
+    header .container-fluid{
+
+        padding: 0 5%;
+    }
+}
+
+header .navb-logo img{
+    width: 150px;
+}
+
+header .navb-items{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    letter-spacing: 2px;
+}
+
+header .item{
+
+    text-align: center;
+    margin-inline: 6%;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #102447;
+    padding: 5px 0;
+    transition: all .1s ease;
+    border-bottom: 0px solid #64d6f4;
+    border-top: 0px solid #64d6f4;
+    cursor: pointer;
+}
+
+header .item:hover{
+
+    border-bottom: 3px solid #64d6f4;
+    border-top: 3px solid #64d6f4;
+}
+
+a.text-items {
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #102427;
+    border: 1px solid #102427;
+}
+
+a.text-items:hover{
+    background-color: #102427;
+    color: white;
+}
+
+/*Modal para mobile*/
+
+.modal-bart .modal-dialog{
+    margin: 0;
+    width: 430px;
+
+}
+
+@media (max-width: 450px){
+    .modal-bart .modal-dialog{
+        width: 250px;
+    }
+}
+
+.modal-bart .modal-content{
+    border-radius: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: #102427;
+}
+
+.modal-bart .modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom:16px;
+    border-bottom: 2px solid #fefefe;
+}
+
+.modal-bart .modal-header img{
+    width: 50px;
+    margin-top: 17.5px;
+}
+
+.modal-bart .modal-header .btn-close{
+    background-color: transparent;
+    opacity: 1;
+}
+
+.modal-bart .modal-body{
+    width: 88%;
+    margin: 0 auto;
+    padding: 75px 0 0 0;
+    flex: unset;
+}
+
+.modal-bart .modal-body .modal-line{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 7px 0;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: all .5s ease;
+    color: #274d8a;
+    border-bottom: 1px solid #274d8a;
+}
+
+.modal-bart .modal-body .modal-line:hover{
+    color: #fefefe;
+    border-bottom: 1px solid #fefefe;
+}
+
+.modal-bart .modal-body .modal-line a{
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    color: #fefefe;
+}
+
+.modal-bart .modal-body .modal-line i{
+    color: currentColor;
+    font-size: 30px;
+    width: 35px;
+    margin-right: 15px;
+    padding: 0 0 3px;
+}
+
+
+.modal-bart .mobile-modal-footer{
+    width: 87%;
+    margin: 0 auto;
+    padding: 20% 0 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    color: #274d8a;
+}
+
+.modal-bart .mobile-modal-footer i:hover{
+    color: #fefefe;
+}
+
+/*Carrucel*/
+
+.section-padding{
+    padding: 100px 0;
+}
+
+.carousel-caption{
+    bottom: 100px;
+    z-index: 2;
+}
+
+.carousel-item{
+    height: calc(100vh - 350px);
+    min-height: 300px;
+}
+
+.carousel-caption h5{
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+
+.carousel-caption p{
+    width: 60%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.carousel-inner::before{
+    content: '';
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+/* Team */
+.team .card-body i{
+    font-size: 20px;
+}
+
+.team .card-body img{
+    width: 135px;
+    height: 135px;
+}
+
+
+.team .card-body h3.card-title{
+    font-size: 20px;
+}
+
+.team .card-body p.card-text{
+    font-size: 14px;
+}
+
+.team .card{
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	left:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+    z-index:100;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+.float:hover {
+	text-decoration: none;
+	color: #25d366;
+    background-color:#fff;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
+.arrou{
+    display: none;
+    position:fixed;
+	width:50px;
+	height:50px;
+	bottom:40px;
+	right:40px;
+	background-color:#172231;
+	color:#FFF;
+	text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+    z-index:100;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.arrou:hover {
+	text-decoration: none;
+	color: #172231;
+    background-color:#fff;
+}
+
+
+
+/* Responsive */
+
+
+
+
+@media only screen and(max-width: 767px){
+    .carousel-caption{
+        bottom: 125px;
+    }
+    
+    .carousel-caption h5{
+        font-size: 17px;
+    }
+    
+    .carousel-caption a{
+        padding: 10px 15px;
+    }
+
+    .carousel-caption p{
+        width: 100%;
+        line-height: 1.6;
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
