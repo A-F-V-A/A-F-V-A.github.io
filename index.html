@@ -1,98 +1,738 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Funetes -->
+    <link rel="stylesheet" href="lib/css_bootstrap_v5.2/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.2.0/css/all.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root{
-            --white: #FFFFFF;
-            --black: #000000;
-            --dark: #232830;
-            --very-light-pink: #717171;
-            --text-input-field: #F7F7F7;
-            --hospital-green: #ACD9B2;
-            --hospital-green-hover: #4f9558;
-            --sm: 14px;
-            --md: 16px;
-            --lg: 18px;
-        }
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: 'Quicksand';
-            background: var(--dark);
-        }
-        .login{
-            width: 100%;
-            height: 100vh;
-            display: grid;
-            place-items: center;
-        }
-        .form-container{
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            width: 300px;
-        }
-        .logo{
-            width: 150px;
-            margin-bottom: 50px;
-            justify-self: center;
-            display: none;
-        }
-        .title{
-            font-size: var(--lg);
-            margin: 12px;
-            text-align: center;
-            color: var(--white);
-        }
-        .subtitle{
-            color: var(--very-light-pink);
-            font-size: var(--md);
-            font-weight: 300;
-            margin-top: 0;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-        .primary-button{
-            background-color: var(--hospital-green);
-            border-radius: 8px;
-            border: none;
-            color: var(--white);
-            width: 100%;
-            cursor: pointer;
-            font-size: var(--md);
-            font-weight: bold;
-            height: 50px;
-        }
-        .primary-button:hover{
-            background-color: var(--hospital-green-hover);
-        }
-        .login-button{
-            margin-top: 14px;
-            margin-bottom: 30px;
-        }
-        @media (max-width: 640px){
-            .logo{
-                display: block;
-            }
-        }
-    </style>
-    <title>A-F-V-A</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;900&display=swap"
+        rel="stylesheet">
+    <title>AV ABOGADOS</title>
 </head>
+
 <body>
-    <div class="login">
-        <div class="form-container">
-            <h1 class="title">
-                Projecto de prueba
-            </h1>
-            <p class="subtitle">Crerado: Andres Felipe Villarraga Arango</p>
+
+    <header class="header">
+        <nav class="container-fluid fixed-top">
+            <div class="navb-logo">
+                <img src="/img/iso-logo-black.png" alt="Logo">
+            </div>
+            <div class="navb-items d-none d-xl-flex">
+                <div class="item">
+                    <a href="#about">Nosotros</a>
+                </div>
+                <div class="item">
+                    <a href="#service">Servicios</a>
+                </div>
+                <div class="item">
+                    <a href="#team">Equipo</a>
+                </div>
+                <div class="item">
+                    <a href="/about">About</a>
+                </div>
+                <a class="text-items btn btn-outline-success btn-sm" href="#">Contacto</a>
+            </div>
+            <div class="mobile-toggler d-lg-none">
+                <a href="" class="" data-bs-toggle="modal" data-bs-target="#navModal">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+        </nav>
+        <div 
+            class="modal fade modal-bart"
+            id="navModal"
+            tabindex="-1"
+            aria-hidden="true"
+            aria-labelledby=""
+            data-bs-backdrop="static"
+        >
+            <div class="modal-dialog modal-dialog-centered modal-dialog-srollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="img/iso-logo-black.png" alt="Logo">
+                        <button 
+                            class="btn-close" 
+                            data-bs-dismiss="modal"
+                            aria-label="Cerrar"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-line">
+                            <i class="fa-sharp fa-solid fa-house"></i><a href="/">Inicio</a>
+                        </div>
+                        <div class="modal-line">
+                            <i class="fa-solid fa-people-group"></i><a href="#">Nosotros</a>
+                        </div>
+                        <div class="modal-line">
+                            <i class="fa-solid fa-bell-concierge"></i><a href="#">servicio</a>
+                        </div>
+                        <div class="modal-line">
+                            <i class="fa-solid fa-envelope"></i><a href="#">Contacto</a>
+                        </div>
+                        <a class="btn btn-outline-primary btn-lg btn-block w-100" href="#">Contacto</a>
+                    </div>
+                    <div class="mobile-modal-footer">
+                        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+        <section id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/header.jpg" class="d-block w-100" alt="Imagen firma Abogados">
+                    <div class="carousel-caption">
+                        <h5>Title</h5>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus alias esse, ab in nihil necessitatibus?</p>
+                        <p><a href="#" class="btn btn-warning mt-3">Mas informacion</a></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/04.jpg" class="d-block w-100" alt="Imagen publicidad de la firma">
+                    <div class="carousel-caption">
+                        <h5>Title</h5>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus alias esse, ab in nihil necessitatibus?</p>
+                        <p><a href="#" class="btn btn-warning mt-3">Mas informacion</a></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/base.jpg" class="d-block w-100" alt="Imagen publicidad de la firma">
+                    <div class="carousel-caption">
+                        <h5>Title</h5>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus alias esse, ab in nihil necessitatibus?</p>
+                        <p><a href="#" class="btn btn-warning mt-3">Mas informacion</a></p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </section>
+    </header>
+
+    <main>
+        <section id="about" class="about section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-12">
+                        <div class="about-img">
+                            <img src="/img/01.jpg" alt="imagen sobre nosotros" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+                        <div class="about-text">
+                            <h2>
+                                Firma de Abogados <br> 
+                                Confia en nosotros
+                            </h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Impedit, blanditiis ea. Facere exercitationem suscipit alias totam, 
+                                eius veniam officiis culpa id, similique dignissimos ratione necessitatibus 
+                                temporibus beatae assumenda aut voluptates eum libero ab quasi cumque.
+                                Lorem ipsum dolor 
+                            </p>
+                            <a href="#" class="btn btn-warning">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="service">
+            <div class="container">
+                <h1 class="text-center">Servicios</h1>
+                <div class="row g-0 align-items-center justify-content-center">
+                    <!-- servicos 01-->
+                    <div class="card col-12 col-sm-2 col-md-3 mx-2 mt-2" style="width: 18rem;">
+                        <img src="img/base.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a  href="#" 
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#mi-modal-1"
+                            >Mas info... </a>
+                        </div>
+                    </div>
+                    <!-- servicos 02-->
+                    <div class="card col-12 col-sm-2 col-md-3 mx-2 mt-2"" style="width: 18rem;">
+                        <img src="img/base.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a 
+                                href="#" 
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#mi-modal-2"
+                            
+                            >Mas info</a>
+                        </div>
+                    </div>
+                    <!-- servicos 03-->
+                    <div class="card col-12 col-sm-2 col-md-3 mx-2 mt-2" style="width: 18rem;">
+                        <img src="img/base.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a  href="#" 
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#mi-modal-3"
+                            >Mas info... </a>
+                        </div>
+                    </div>
+                    <!-- servicos 04-->
+                    <div class="card col-12 col-sm-2 col-md-3 mx-2 mt-2"" style="width: 18rem;">
+                        <img src="img/base.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a 
+                                href="#" 
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#mi-modal-4"
+                            
+                            >Mas info</a>
+                        </div>
+                    </div>
+                    <!-- servicos 05-->
+                    <div class="card col-12 col-sm-2 col-md-3 mx-2 mt-2" style="width: 18rem;">
+                        <img src="img/base.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a  href="#" 
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#mi-modal-5"
+                            >Mas info... </a>
+                        </div>
+                    </div>
+                    <!-- servicos 06-->
+                    <div class="card col-12 col-sm-2 col-md-3 mx-2 mt-2"" style="width: 18rem;">
+                        <img src="img/base.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a 
+                                href="#" 
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#mi-modal-6"
+                            
+                            >Mas info</a>
+                        </div>
+                    </div>
+                    <!-- servicos 07-->
+                    <div class="card col-12 col-sm-2 col-md-3 mx-2 mt-2" style="width: 18rem;">
+                        <img src="img/base.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a  href="#" 
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#mi-modal-7"
+                            >Mas info... </a>
+                        </div>
+                    </div>
+                    <!-- servicos 08-->
+                    <div class="card col-12 col-sm-2 col-md-3 mx-2 mt-2"" style="width: 18rem;">
+                        <img src="img/base.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a 
+                                href="#" 
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#mi-modal-8"
+                            
+                            >Mas info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modales de servicos -->
+            <!-- servicos 01-->
+            <div 
+                class="modal fade"
+                id="mi-modal-1"
+                tabindex="-1"
+                aria-hidden="true"
+                aria-labelledby="label-modal-1"
+                data-bs-backdrop="static"
+            
+            >
+                <div class="modal-dialog modal-dialog-centered modal-dialog-srollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Titulo modal</h5>
+                            <button 
+                                class="btn-close" 
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptates, perspiciatis reprehenderit mollitia impedit a.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            >Cancelar</button>
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                            >Acepto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- servicos 02 -->
+            <div 
+                class="modal fade"
+                id="mi-modal-2"
+                tabindex="-1"
+                aria-hidden="true"
+                aria-labelledby="label-modal-2"
+            
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Titulo modal</h5>
+                            <button 
+                                class="btn-close" 
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptates, perspiciatis reprehenderit mollitia impedit a.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            >Cancelar</button>
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                            >Acepto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- servicos 03 -->
+            <div 
+                class="modal fade"
+                id="mi-modal-3"
+                tabindex="-1"
+                aria-hidden="true"
+                aria-labelledby="label-modal-3"
+            
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Titulo modal</h5>
+                            <button 
+                                class="btn-close" 
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptates, perspiciatis reprehenderit mollitia impedit a.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            >Cancelar</button>
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                            >Acepto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- servicos 04 -->
+            <div 
+                class="modal fade"
+                id="mi-modal-4"
+                tabindex="-1"
+                aria-hidden="true"
+                aria-labelledby="label-modal-4"
+            
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Titulo modal</h5>
+                            <button 
+                                class="btn-close" 
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptates, perspiciatis reprehenderit mollitia impedit a.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            >Cancelar</button>
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                            >Acepto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- servicos 05 -->
+            <div 
+                class="modal fade"
+                id="mi-modal-5"
+                tabindex="-1"
+                aria-hidden="true"
+                aria-labelledby="label-modal-5"
+            
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Titulo modal</h5>
+                            <button 
+                                class="btn-close" 
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptates, perspiciatis reprehenderit mollitia impedit a.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            >Cancelar</button>
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                            >Acepto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- servicos 06 -->
+            <div 
+                class="modal fade"
+                id="mi-modal-6"
+                tabindex="-1"
+                aria-hidden="true"
+                aria-labelledby="label-modal-6"
+            
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Titulo modal</h5>
+                            <button 
+                                class="btn-close" 
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptates, perspiciatis reprehenderit mollitia impedit a.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            >Cancelar</button>
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                            >Acepto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- servicos 07 -->
+            <div 
+                class="modal fade"
+                id="mi-modal-7"
+                tabindex="-1"
+                aria-hidden="true"
+                aria-labelledby="label-modal-7"
+            
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Titulo modal</h5>
+                            <button 
+                                class="btn-close" 
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptates, perspiciatis reprehenderit mollitia impedit a.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            >Cancelar</button>
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                            >Acepto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- servicos 08 -->
+            <div 
+                class="modal fade"
+                id="mi-modal-8"
+                tabindex="-1"
+                aria-hidden="true"
+                aria-labelledby="label-modal-8"
+            
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Titulo modal</h5>
+                            <button 
+                                class="btn-close" 
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptates, perspiciatis reprehenderit mollitia impedit a.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                data-bs-dismiss="modal"
+                                aria-label="Cerrar"
+                            >Cancelar</button>
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                            >Acepto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="team" class="team section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-header text-center pb-5">
+                            <h2>Equipo</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique eum tempore vero cupiditate ipsam cumque.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <img src="img/team-foto-1.jpg" alt="" class="img img-fluid rounded-circle">
+                                <h3 class="card-title py-2">Nombre de la persona</h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, nesciunt?
+                                </p>
+                                <p class="socials">
+                                    <i class="fa-brands fa-instagram mx-1"></i>
+                                    <i class="fa-brands fa-whatsapp mx-1"></i>
+                                    <i class="fa-brands fa-facebook mx-1"></i>
+                                    <i class="fa-brands fa-youtube mx-1"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <img src="img/team-foto-1.jpg" alt="" class="img img-fluid rounded-circle">
+                                <h3 class="card-title py-2">Nombre de la persona</h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, nesciunt?
+                                </p>
+                                <p class="socials">
+                                    <i class="fa-brands fa-instagram mx-1"></i>
+                                    <i class="fa-brands fa-whatsapp mx-1"></i>
+                                    <i class="fa-brands fa-facebook mx-1"></i>
+                                    <i class="fa-brands fa-youtube mx-1"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <img src="img/team-foto-1.jpg" alt="" class="img img-fluid rounded-circle">
+                                <h3 class="card-title py-2">Nombre de la persona</h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, nesciunt?
+                                </p>
+                                <p class="socials">
+                                    <i class="fa-brands fa-instagram mx-1"></i>
+                                    <i class="fa-brands fa-whatsapp mx-1"></i>
+                                    <i class="fa-brands fa-facebook mx-1"></i>
+                                    <i class="fa-brands fa-youtube mx-1"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <img src="img/team-foto-1.jpg" alt="" class="img img-fluid rounded-circle">
+                                <h3 class="card-title py-2">Nombre de la persona</h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, nesciunt?
+                                </p>
+                                <p class="socials">
+                                    <i class="fa-brands fa-instagram mx-1"></i>
+                                    <i class="fa-brands fa-whatsapp mx-1"></i>
+                                    <i class="fa-brands fa-facebook mx-1"></i>
+                                    <i class="fa-brands fa-youtube mx-1"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white mt-3 pt-5 pb-4">
+        <div class="container text-center text-md-left">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Av Abogados</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Repellendus suscipit debitis nam quis explicabo veritatis sint delectus et. 
+                        Blanditiis in error culpa natus dignissimos cupiditate, aspernatur asperiores
+                        fuga animi dolorem nemo id. Quae, quisquam culpa.</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Servicos</h5>
+                    <p><a class="text-white" style="text-decoration:none;" href="#">Servicios</a></p>
+                    <p><a class="text-white" style="text-decoration:none;" href="#">Servicios</a></p>
+                    <p><a class="text-white" style="text-decoration:none;" href="#">Servicios</a></p>
+                    <p><a class="text-white" style="text-decoration:none;" href="#">Servicios</a></p>
+                    <p><a class="text-white" style="text-decoration:none;" href="#">Servicios</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5>
+                    <p><i>Icono telefono</i>+57 315 453 5032</p>
+                    <p><i>Icono Correo</i>avabogados.com.co</p>
+                    <p><i>Icono Direccion</i>Carrera 25# 36-96</p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Titulo</h5>
+                    <div class="img-thumbnail">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15909.337224191668!2d-75.6747016!3d4.5336867!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd1484dad0771bc05!2sAVO%20Abogados%20Asesores!5e0!3m2!1ses!2sco!4v1667427052561!5m2!1ses!2sco" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <hr class="mb-4 mt-2">
+                <div class="row align-items-center">
+                    <div>  
+                        <p> 2022 © Copyrights <a style="text-decoration:none;" href="#" class="text-warning">AV ABOGADOS</a> Todos los derechos reservados © 2022:
+                            
+                        </p>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <div class="text-center text-md-right">
+                            <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Icono general de wha -->
+    <a href="#" class="float d-flex align-items-center justify-content-center" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="#" class="arrou">
+        <i class="fa-solid fa-angle-up"></i>
+    </a>
+    <script src="lib/js_bootstrap_v5.2/bootstrap.bundle.min.js"></script>
+    <script 
+        src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
+    </script>
+    <!-- Code general -->
+    <script src="/scripts/varibles.js"></script>
+    <script src="/scripts/ready.js"></script>
+    <script src="/scripts/funtion.js"></script>
 </body>
+
 </html>
